@@ -1,0 +1,142 @@
+📚 Guia de Estudo — Projeto QA Lacrei Saúde
+Como Apresentar e Explicar o Projeto em uma Entrevista
+Analista: Idna Reis
+Data: Abril/2026
+________________________________________
+🎯 Como Apresentar o Projeto em 30 Segundos
+Quando alguém perguntar sobre esse projeto, você pode falar assim:
+“Realizei um desafio técnico completo de QA para a Lacrei Saúde, uma health tech voltada para a comunidade LGBTQIAPN+. Executei testes manuais funcionais em ambiente mobile, registrei bugs com impacto e prioridade, realizei testes de acessibilidade com nota 96 no Lighthouse, configurei automação com Cypress e Cucumber, e configurei um pipeline CI/CD com GitHub Actions. Toda a documentação está organizada no Notion e GitHub.”
+________________________________________
+📖 PARTE 1 — O QUE É QA? (Explique como em uma aula)
+O que significa QA?
+QA significa Quality Assurance, ou em português: Garantia de Qualidade.
+Pense assim: imagine que você trabalha numa padaria. Antes de vender o pão para o cliente, alguém precisa provar e verificar se está bom, se o peso está certo, se a embalagem está intacta. Esse alguém é o QA do software — a pessoa que testa tudo antes do produto chegar ao usuário final.
+O que um QA faz na prática?
+Um QA Analyst realiza as seguintes atividades no dia a dia:
+1.	Escreve casos de teste — documenta passo a passo como testar cada funcionalidade
+2.	Executa os testes — testa manualmente ou de forma automatizada
+3.	Registra bugs — documenta os problemas encontrados com detalhes para o desenvolvedor corrigir
+4.	Valida as correções — depois que o desenvolvedor corrige, o QA testa novamente
+5.	Aprova para produção — dá o sinal verde para o sistema ir ao ar
+Por que o QA é importante?
+Sem QA, bugs chegam até os usuários. No caso da Lacrei Saúde, um bug pode impedir uma pessoa da comunidade LGBTQIAPN+ de acessar um profissional de saúde seguro. Por isso qualidade é cuidado — cada teste importa de verdade.
+________________________________________
+📖 PARTE 2 — FERRAMENTAS USADAS NO PROJETO
+1. Gherkin (Linguagem de Testes)
+O que é? Gherkin é uma linguagem simples, em português mesmo, usada para escrever cenários de teste. Qualquer pessoa consegue ler e entender — não precisa saber programar.
+Estrutura básica:
+Dado que [contexto inicial]
+Quando [ação do usuário]
+Então [resultado esperado]
+Exemplo real do projeto:
+Cenário: Login com campos vazios
+  Dado que o usuário está na tela de login
+  Quando clica em "Entrar" sem preencher nenhum campo
+  Então o sistema exibe "Este campo é obrigatório"
+Por que usamos? Porque o desafio da Lacrei pediu e porque é a forma profissional de documentar testes de forma clara para toda a equipe.
+________________________________________
+2. Cypress (Automação de Testes)
+O que é? Cypress é uma ferramenta que automatiza testes web. Em vez de você clicar manualmente em cada botão toda vez, o Cypress faz isso automaticamente para você.
+Analogia simples: Imagine um robô que fica repetindo os mesmos testes toda vez que o desenvolvedor muda o código. Esse robô é o Cypress.
+O que fizemos no projeto: Criamos um teste automatizado que simula o cadastro de uma nova pessoa na plataforma da Lacrei Saúde.
+Arquivo criado: cadastro.feature com os cenários em Gherkin e cadastro.js com o código que executa os testes.
+________________________________________
+3. GitHub Actions (CI/CD)
+O que é CI/CD? - CI = Continuous Integration (Integração Contínua) - CD = Continuous Delivery (Entrega Contínua)
+Analogia simples: Imagine que toda vez que um desenvolvedor salva uma mudança no código, automaticamente um robô roda todos os testes. Se algum teste falhar, o robô avisa. Isso é CI/CD.
+O que fizemos no projeto: Criamos um arquivo cypress.yml que faz os testes rodarem automaticamente no GitHub toda vez que alguém fizer um commit ou pull request.
+________________________________________
+4. Lighthouse (Testes de Acessibilidade e Performance)
+O que é? Lighthouse é uma ferramenta gratuita do Google, disponível no Chrome DevTools, que analisa um site e dá notas de 0 a 100 em quatro categorias: - Performance (velocidade) - Accessibility (acessibilidade) - Best Practices (boas práticas) - SEO (otimização para buscadores)
+Resultados do nosso projeto:
+Categoria	Nota	O que significa
+Performance	15/100	Página carrega muito devagar — crítico
+Acessibilidade	96/100	Excelente — passou o mínimo de 90
+Best Practices	73/100	Regular — tem melhorias a fazer
+SEO	82/100	Bom
+Como falar sobre isso na entrevista: > “Rodei o Lighthouse e identifiquei que a performance está crítica com nota 15, principalmente pelo LCP de 13.2 segundos — o ideal é abaixo de 2.5 segundos. Já a acessibilidade ficou em 96, acima do mínimo exigido de 90. Documentei sugestões de melhoria como otimização de imagens e lazy loading.”
+________________________________________
+5. Notion (Documentação)
+O que é? Notion é uma plataforma de organização de documentos. Usamos para registrar todos os artefatos do projeto de forma organizada e compartilhável.
+O que documentamos: 1. Casos de Teste em Gherkin 2. Execução dos Testes com resultados 3. Registro de Bugs 4. Teste de Acessibilidade 5. Teste de Desempenho 6. Teste de Responsividade 7. Evidências com prints
+________________________________________
+📖 PARTE 3 — OS TESTES REALIZADOS
+Testes Funcionais
+Testamos 3 fluxos principais na plataforma da Lacrei Saúde:
+Fluxo 1: Login - Login com credenciais válidas - Login com credenciais inválidas - Login com campos vazios
+Fluxo 2: Cadastro - Cadastro com dados válidos - Cadastro com campos vazios - Cadastro com e-mail inválido
+Fluxo 3: Recuperação de Senha - Redefinir senha com e-mail válido - Redefinir senha com campo vazio - Redefinir senha com e-mail não cadastrado
+Total: 9 casos de teste executados
+________________________________________
+Bugs Encontrados
+BUG01 — Mensagem de erro genérica no login - O que acontece: Sistema exibe “Você não tem permissão para executar esta ação” em vez de “E-mail ou senha incorretos” - Por que é um problema: Confunde o usuário que não entende o que errou - Impacto: Médio - Como reproduzir: Digitar credenciais inválidas e clicar em Entrar
+BUG02 — Mensagem genérica na recuperação de senha - O que acontece: Sistema exibe “Os dados enviados são inválidos” em vez de “E-mail não encontrado” - Por que é um problema: Usuário não sabe se digitou errado ou se o e-mail não existe - Impacto: Médio
+BUG03 — Performance crítica - O que acontece: Página demora 13.2 segundos para carregar completamente - Por que é um problema: O ideal é menos de 2.5 segundos. Usuários abandonam páginas lentas - Impacto: Alto
+BUG04 — Atributos ARIA proibidos - O que acontece: Elementos da página usam atributos ARIA incorretos - Por que é um problema: Prejudica usuários que utilizam leitores de tela como NVDA - Impacto: Alto
+________________________________________
+Teste de Responsividade
+Verificamos se o site funciona bem em diferentes tamanhos de tela:
+Mobile (celular): - Layout carregou corretamente - Ilustração sumiu — layout ficou limpo - Campos organizados e legíveis - Botões com tamanho adequado para toque
+Desktop (computador): - Ilustração aparece ao lado dos campos - Layout responsivo funcionando
+Resultado: Aprovado — sem quebras críticas
+________________________________________
+📖 PARTE 4 — PERGUNTAS FREQUENTES EM ENTREVISTA
+“Me fale sobre esse projeto”
+“Realizei um desafio técnico de QA para a Lacrei Saúde, testando os principais fluxos da plataforma — login, cadastro e recuperação de senha. Executei os testes manualmente no mobile, encontrei 4 bugs e documentei tudo no Notion. Também rodei o Lighthouse e encontrei uma performance crítica de 15 pontos e acessibilidade excelente de 96. Automatizei o fluxo de cadastro com Cypress e Cucumber, e configurei CI/CD com GitHub Actions para os testes rodarem automaticamente.”
+________________________________________
+“O que é um caso de teste?”
+“Um caso de teste documenta passo a passo como testar uma funcionalidade específica. Ele tem um ID, um título, os passos para executar, o resultado esperado e o resultado obtido. Por exemplo, o CT01 testa o login com credenciais válidas — o resultado esperado é redirecionar para a página inicial.”
+________________________________________
+“O que é um bug report?”
+“Um bug report é o registro detalhado de um defeito encontrado durante os testes. Ele contém: descrição clara do problema, passos para reproduzir, resultado esperado versus resultado obtido, impacto no usuário e sugestão de prioridade. Um bom bug report permite que o desenvolvedor reproduza e corrija o problema sem precisar perguntar nada.”
+________________________________________
+“O que é BDD?”
+“BDD significa Behavior Driven Development, ou Desenvolvimento Orientado a Comportamento. É uma técnica onde escrevemos os testes em linguagem natural usando palavras-chave como Dado, Quando e Então — o formato Gherkin. A vantagem é que qualquer pessoa da equipe consegue ler e entender os cenários de teste, não só os desenvolvedores.”
+________________________________________
+“Por que a acessibilidade é importante?”
+“Acessibilidade garante que todas as pessoas consigam usar o sistema, incluindo pessoas com deficiência visual que usam leitores de tela, pessoas com deficiência motora que navegam pelo teclado, e pessoas com baixa visão que precisam de bom contraste de cores. No caso da Lacrei Saúde, que atende a comunidade LGBTQIAPN+, garantir acessibilidade é ainda mais importante para não excluir ninguém.”
+________________________________________
+“Qual a diferença entre teste manual e automatizado?”
+“No teste manual, eu mesma acesso o sistema, clico nos botões e verifico se está funcionando. No teste automatizado, escrevo um código — no nosso caso com Cypress — que faz isso por mim, de forma mais rápida e repetível. O manual é melhor para explorar o sistema e encontrar bugs inesperados. O automatizado é melhor para executar os mesmos testes repetidamente, especialmente em regressão.”
+________________________________________
+📖 PARTE 5 — LINKS IMPORTANTES DO PROJETO
+•	Notion: https://www.notion.so/Desafio-QA-Lacrei-Sa-de-349573f9cc6a80729274ff4440ba7c8d
+•	GitHub Automação: https://github.com/IdnaReis/lacrei-qa-automation
+•	GitHub Portfólio: https://github.com/IdnaReis/portfolio-qa-DIO
+•	LinkedIn: https://linkedin.com/in/idna-reis
+________________________________________
+📖 PARTE 6 — GLOSSÁRIO DE TERMOS
+Termo	Significado Simples
+QA	Pessoa que testa o sistema antes de ir ao ar
+Bug	Erro ou defeito encontrado no sistema
+Caso de Teste	Documento que descreve como testar algo
+Gherkin	Linguagem simples para escrever testes
+Cypress	Ferramenta de automação de testes web
+CI/CD	Sistema que roda testes automaticamente a cada mudança
+Lighthouse	Ferramenta que analisa performance e acessibilidade
+Staging	Ambiente de testes — cópia do sistema real
+Regressão	Testar tudo de novo depois de uma mudança
+LCP	Tempo que demora para a página principal carregar
+ARIA	Atributos que ajudam leitores de tela
+BDD	Escrever testes em linguagem natural
+Sprint	Ciclo de trabalho ágil — geralmente 2 semanas
+Bug Report	Relatório detalhado de um erro encontrado
+________________________________________
+💜 Considerações Finais
+
+Este projeto representa a aplicação prática das principais 
+atividades do dia a dia de um QA Analyst, desenvolvido com 
+rigor técnico e atenção aos detalhes em todas as etapas.
+
+Foram executados testes funcionais em ambiente real, 
+identificados e documentados bugs com impacto e prioridade, 
+validada a acessibilidade e o desempenho da plataforma, 
+e configurada automação com pipeline CI/CD — cobrindo todo 
+o ciclo de qualidade esperado em um time de tecnologia.
+
+A documentação completa está disponível no Notion e GitHub, 
+refletindo o compromisso com organização, transparência e 
+excelência técnica.
+
+Idna Reis — QA Analyst
+linkedin.com/in/idna-reis | github.com/IdnaReis
