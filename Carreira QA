@@ -1,3 +1,4 @@
+
 📚 Guia de Estudo — Projeto QA Lacrei Saúde
 Como Apresentar e Explicar o Projeto em uma Entrevista
 Analista: Idna Reis
@@ -123,20 +124,8 @@ Sprint	Ciclo de trabalho ágil — geralmente 2 semanas
 Bug Report	Relatório detalhado de um erro encontrado
 ________________________________________
 💜 Considerações Finais
-
-Este projeto representa a aplicação prática das principais 
-atividades do dia a dia de um QA Analyst, desenvolvido com 
-rigor técnico e atenção aos detalhes em todas as etapas.
-
-Foram executados testes funcionais em ambiente real, 
-identificados e documentados bugs com impacto e prioridade, 
-validada a acessibilidade e o desempenho da plataforma, 
-e configurada automação com pipeline CI/CD — cobrindo todo 
-o ciclo de qualidade esperado em um time de tecnologia.
-
-A documentação completa está disponível no Notion e GitHub, 
-refletindo o compromisso com organização, transparência e 
-excelência técnica.
-
+Este projeto representa a aplicação prática das principais atividades do dia a dia de um QA Analyst, desenvolvido com rigor técnico e atenção aos detalhes em todas as etapas.
+Foram executados testes funcionais em ambiente real, identificados e documentados bugs com impacto e prioridade, validada a acessibilidade e o desempenho da plataforma, e configurada automação com pipeline CI/CD — cobrindo todo o ciclo de qualidade esperado em um time de tecnologia.
+A documentação completa está disponível no Notion e GitHub, refletindo o compromisso com organização, transparência e excelência técnica.
 Idna Reis — QA Analyst
 linkedin.com/in/idna-reis | github.com/IdnaReis
